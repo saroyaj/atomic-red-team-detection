@@ -1,4 +1,9 @@
 <details>
+<summary>T1003.001-1 Dump LSASS.exe Memory using ProcDump
+</summary>
+<pre>$ NA </pre>
+</details>
+<details>
 <summary>T1003.001-2 Dump LSASS.exe Memory using comsvcs.dll
 </summary>
 <pre>$ NA </pre>
