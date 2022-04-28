@@ -21,9 +21,10 @@
 <pre>$ NA </pre>
 </details>
 <details>
-<summary>T1003.001-6 Offline Credential Theft With Mimikatz
+<summary>T1003.001-6 Offline Credential Theft With Mimikatz :white_check_mark:
 </summary>
-<pre>$ NA </pre>
+  <b>Splunk</b>
+<pre>$ index=win_* source="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1 AND (CommandLine="*sekurlsa::minidump*" OR CommandLine="*sekurlsa::logonpasswords*") | table host, User, Image, CommandLine </pre>
 </details>
 <details>
 <summary>T1003.001-7 LSASS read with pypykatz
