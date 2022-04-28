@@ -1,5 +1,5 @@
 <details>
-<summary>T1003.001-1 Dump LSASS.exe Memory using ProcDump
+<summary>T1003.001-1 Dump LSASS.exe Memory using ProcDump :white_check_mark:
 </summary>
 <b>Splunk</b>
 <pre>index=win_* source="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" CommandLine="* -ma *" AND (CommandLine="* lsass*" OR CommandLine="* ls*") | table host, User, Image, CommandLine </pre>
