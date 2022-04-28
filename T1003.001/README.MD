@@ -1,7 +1,8 @@
 <details>
 <summary>T1003.001-1 Dump LSASS.exe Memory using ProcDump
 </summary>
-<pre>$ **Splunk:** index=win_* source="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" CommandLine="* -ma *" AND (CommandLine="* lsass*" OR CommandLine="* ls*") | table host, User, Image, CommandLine </pre>
+**Splunk:**  
+<pre>index=win_* source="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" CommandLine="* -ma *" AND (CommandLine="* lsass*" OR CommandLine="* ls*") | table host, User, Image, CommandLine </pre>
 </details>
 <details>
 <summary>T1003.001-2 Dump LSASS.exe Memory using comsvcs.dll
