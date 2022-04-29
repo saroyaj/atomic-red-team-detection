@@ -30,7 +30,7 @@
 <summary>T1003.001-7 LSASS read with pypykatz :white_check_mark:
 </summary>
   <b>Splunk</b>
-<pre>$ index=win_* source="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=10 TargetImage="*lsass.exe" AND (CallTrace="*ntdll.dll*" AND CallTrace="*KERNELBASE.dll*" AND CallTrace="*libffi-*.dll*" AND CallTrace="*_ctypes.pyd*" AND CallTrace="*python3*.dll*") </pre>
+<pre>$ index=win_* source="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=10 TargetImage="*lsass.exe" AND (CallTrace="*ntdll.dll*" AND CallTrace="*KERNELBASE.dll*" AND CallTrace="*libffi-*.dll*" AND CallTrace="*_ctypes.pyd*" AND CallTrace="*python3*.dll*") GrantedAccess=0x1fffff </pre>
 </details>
 <details>
 <summary>T1003.001-8 Dump LSASS.exe Memory using Out-Minidump.ps1
