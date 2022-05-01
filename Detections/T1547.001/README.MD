@@ -1,7 +1,8 @@
 <details>
-<summary>T1547.001-1 Reg Key Run
+<summary>T1547.001-1 Reg Key Run :white_check_mark:
 </summary>
-<pre>$ NA </pre>
+  <b>Splunk</b>
+<pre>$ index=win_* AND sourcetype="XmlWinEventLog:microsoft-windows-sysmon/Operational" AND EventCode=13 TargetObject="*\\CurrentVersion\\Run*" </pre>
 </details>
 <details>
 <summary>T1547.001-2 Reg Key RunOnce
