@@ -42,7 +42,7 @@
 <summary>T1548.002-9 Bypass UAC using SilentCleanup task :white_check_mark:
 </summary>
   <b>Splunk</b>
-<pre>$ index=win_* AND (EventID=13 OR EventType=SetValue) AND (TargetObject="*\\Environment\\windir" AND Details="*REM*") | table host, User, Image, TargetObject, registry_value_name, registry_value_data </pre>
+<pre>$ index=win_* sourcetype="XmlWinEventLog:microsoft-windows-sysmon/Operational" AND (EventID=13 OR EventType=SetValue) AND (TargetObject="*\\Environment\\windir" AND Details="*REM*") | table host, User, Image, TargetObject, registry_value_name, registry_value_data </pre>
 </details>
 <details>
 <summary>T1548.002-10 UACME Bypass Method 23
