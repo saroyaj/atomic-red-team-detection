@@ -2,7 +2,7 @@
 |------|----------|--------------|-----|
 |Credential-access|[T1003.002](https://github.com/saroyaj/atomic-red-team-detection/tree/main/Detections/T1003.002)|Security Account Manager|1|
 |Privilege-escalation|[T1548.002](https://github.com/saroyaj/atomic-red-team-detection/tree/main/Detections/T1548.002)|Bypass User Account Control|9|
-|Privilege-escalation|T1078.001|Default Accounts|1|
+|Privilege-escalation|[T1078.001](https://github.com/saroyaj/atomic-red-team-detection/blob/main/Detections/T1078.001/)|Default Accounts|1|
 |Privilege-escalation|T1547.001|Registry Run Keys / Startup Folder|1|
 |Privilege-escalation|T1547.004|Winlogon Helper DLL|3|
 |Defense-evasion|T1197|BITS Jobs|1|
