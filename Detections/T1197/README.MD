@@ -17,7 +17,8 @@
 <pre>$ index=win_* EventChannel="Microsoft-Windows-Sysmon/Operational" EventCode=1 Image="*bitsadmin.exe" AND (CommandLine="*create*" OR CommandLine="*addfile*" OR CommandLine="*setnotifycmdline*" OR CommandLine="*resume*" OR CommandLine="*complete*") </pre>
 </details>
 <details>
-<summary>T1197-4 Bits download using desktopimgdownldr.exe (cmd)
+  <b>Splunk</b>
+<summary>T1197-4 Bits download using desktopimgdownldr.exe (cmd) :white_check_mark:
 </summary>
-<pre>$ NA </pre>
+<pre>$ index=win_* EventChannel="Microsoft-Windows-Sysmon/Operational" EventID=1 CommandLine="*desktopimgdownldr*" </pre>
 </details>
