@@ -5,9 +5,10 @@
 <pre>$ index=win_* EventChannel="Microsoft-Windows-Sysmon/Operational" Image="*bitsadmin.exe" AND (CommandLine="*transfer*" OR CommandLine="*download*") </pre>
 </details>
 <details>
-<summary>T1197-2 Bitsadmin Download (PowerShell)
+<summary>T1197-2 Bitsadmin Download (PowerShell) :white_check_mark:
 </summary>
-<pre>$ NA </pre>
+  <b>Splunk</b>
+<pre>$ index=win_* EventChannel="Microsoft-Windows-Sysmon/Operational" Image="*powershell.exe" CommandLine="*Start-BitsTransfer*" </pre>
 </details>
 <details>
 <summary>T1197-3 Persist, Download, & Execute
