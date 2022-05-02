@@ -1,7 +1,8 @@
 <details>
-<summary>T1197-1 Bitsadmin Download (cmd)
+<summary>T1197-1 Bitsadmin Download (cmd) :white_check_mark:
 </summary>
-<pre>$ NA </pre>
+  <b>Splunk</b>
+<pre>$ index=win_* EventChannel="Microsoft-Windows-Sysmon/Operational" Image="*bitsadmin.exe" AND (CommandLine="*transfer*" OR CommandLine="*download*") </pre>
 </details>
 <details>
 <summary>T1197-2 Bitsadmin Download (PowerShell)
