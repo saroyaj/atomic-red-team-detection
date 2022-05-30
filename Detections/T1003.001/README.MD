@@ -10,6 +10,7 @@
 </summary>
   <b>Splunk</b>
 <pre>$ index=win_* sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" AND (CommandLine="*comsvcs.dll*" OR CommandLine="*rundll32*" OR CommandLine="*.dmp*") AND CommandLine="* full*" | table host, User, Image, CommandLine </pre>
+<pre>| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time) as lastTime from datamodel=Endpoint.Processes where  ((Processes.process="*comsvcs.dll*" OR Processes.process="*rundll32*" OR Processes.process="*.dmp*") AND Processes.process="* full*") by Processes.dest Processes.user Processes.parent_process Processes.process_name Processes.process Processes.process_id Processes.parent_process_id | `drop_dm_object_name(Processes)` | `security_content_ctime(firstTime)`| `security_content_ctime(lastTime)`</pre>
 </details>
 <details>
 <summary>T1003.001-3 Dump LSASS.exe Memory using direct system calls and API unhooking
