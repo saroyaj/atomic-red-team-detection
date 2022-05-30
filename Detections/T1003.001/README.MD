@@ -3,6 +3,7 @@
 </summary>
 <b>Splunk</b>
 <pre>$ index=win_* sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" CommandLine="* -ma *" AND (CommandLine="* lsass*" OR CommandLine="* ls*") | table host, User, Image, CommandLine </pre>
+<pre>| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time) as lastTime from datamodel=Endpoint.Processes where (Processes.process="* -ma *" AND (Processes.process="* lsass*" OR Processes.process="* ls*")) by Processes.dest Processes.user Processes.parent_process Processes.process_name Processes.process Processes.process_id Processes.parent_process_id | `drop_dm_object_name(Processes)` | `security_content_ctime(firstTime)`| `security_content_ctime(lastTime)` </pre>
 </details>
 <details>
 <summary>T1003.001-2 Dump LSASS.exe Memory using comsvcs.dll :white_check_mark:
