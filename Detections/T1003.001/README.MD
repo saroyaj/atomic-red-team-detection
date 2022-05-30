@@ -27,6 +27,7 @@
 </summary>
   <b>Splunk</b>
 <pre>$ index=win_* source="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1 AND (CommandLine="*sekurlsa::minidump*" OR CommandLine="*sekurlsa::logonpasswords*") | table host, User, Image, CommandLine </pre>
+<pre>| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time) as lastTime from datamodel=Endpoint.Processes where  (Processes.process="*sekurlsa::minidump*" OR Processes.process="*sekurlsa::logonpasswords*") by Processes.dest Processes.user Processes.parent_process Processes.process_name Processes.process Processes.process_id Processes.parent_process_id | `drop_dm_object_name(Processes)` | `security_content_ctime(firstTime)`| `security_content_ctime(lastTime)`</pre>
 </details>
 <details>
 <summary>T1003.001-7 LSASS read with pypykatz :white_check_mark:
