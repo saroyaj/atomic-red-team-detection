@@ -14,9 +14,9 @@
 <pre>| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time) as lastTime from datamodel=Endpoint.Processes where (Processes.process_name=*esentutl.exe* AND Processes.process="*/y /vss*/d*") by Processes.dest Processes.user Processes.parent_process Processes.process_name Processes.process Processes.process_id Processes.parent_process_id | `drop_dm_object_name(Processes)` | `security_content_ctime(firstTime)`| `security_content_ctime(lastTime)` </pre>
 </details>
 <details>
-<summary>T1003.002-4 PowerDump Hashes and Usernames from Registry
+<summary>T1003.002-4 PowerDump Hashes and Usernames from Registry :white_check_mark:
 </summary>
-<pre>$ NA </pre>
+<pre>| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time) as lastTime from datamodel=Endpoint.Processes where (Processes.process_name=*powershell*.exe* AND Processes.process="*Invoke-PowerDump*") by Processes.dest Processes.user Processes.parent_process Processes.process_name Processes.process Processes.process_id Processes.parent_process_id | `drop_dm_object_name(Processes)` | `security_content_ctime(firstTime)`| `security_content_ctime(lastTime)` </pre>
 </details>
 <details>
 <summary>T1003.002-5 dump volume shadow copy hives with certutil
